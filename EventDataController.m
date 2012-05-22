@@ -40,13 +40,13 @@
         NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:
                                                      self.scanAppDelegate.managedObjectModel];
         if (coordinator != nil) {
-            managedObjectContext = [[NSManagedObjectContext alloc] init];
-            [managedObjectContext setPersistentStoreCoordinator: coordinator];
+             managedObjectContext = [[NSManagedObjectContext alloc] init];
+             [managedObjectContext setPersistentStoreCoordinator: coordinator];
         }
     }
     
 	event = (Event *)[NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.scanAppDelegate.managedObjectContext];
-	[event setCode: [EventDataController getCurrentDate]];
+	[event setEventName:[EventDataController getCurrentDate]];
     [self.scanAppDelegate.managedObjectContext save:nil];
 }
 
@@ -56,7 +56,7 @@
 
 - (id)objectInListAtIndex:(unsigned)theIndex {
     Event * event = [self.eventListArray objectAtIndex:theIndex];
-    return  [event code];
+    return  [event eventName];
 }
 
 - (void)removeDataAtIndex:(unsigned)theIndex {
