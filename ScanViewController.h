@@ -10,11 +10,14 @@
 #import "NewChangeEvantViewController.h"
 #import "EventDetailViewController.h"
 #import "EventDataController.h"
+#import "ScanAppDelegate.h"
 
 @interface ScanViewController : UIViewController {
-    EventDataController *eventTableControll;
     IBOutlet UITableView *eventOverVievList;
 }
+
+@property ScanAppDelegate * scanAppDelegate;
+@property EventDataController *eventTableControll;
 
 - (IBAction)newEventButtonPressed:(id)sender;
 - (IBAction)deleteButtonPressed:(id)sender;

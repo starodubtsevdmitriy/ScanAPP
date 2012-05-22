@@ -8,15 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "Event.h"
+#include "ScanAppDelegate.h"
 
-@interface EventDataController : NSObject {
+@interface EventDataController : NSObject <UIApplicationDelegate> {
     Event *event;
     NSMutableArray * eventListArray;
     NSManagedObjectContext *managedObjectContext;  
 }   
-    
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;  
-@property (nonatomic, retain) NSMutableArray *eventListArray;   
+
+@property (nonatomic, strong) NSMutableArray *eventListArray;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) ScanAppDelegate *scanAppDelegate;
  
 - (unsigned)countOfList; // Returns number of elements in list    
 - (id)objectInListAtIndex:(unsigned)theIndex; // Returns object at given index

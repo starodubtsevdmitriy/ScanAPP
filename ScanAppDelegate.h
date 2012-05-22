@@ -14,6 +14,7 @@
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    NSMutableArray *eventListArray;
 }
 
 @property (strong, nonatomic) UIWindow *window;
